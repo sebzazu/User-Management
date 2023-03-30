@@ -8,13 +8,21 @@ void createUser(fstream& file);
 void deleteUser(fstream&file);
 void readUsernames(fstream&file);
 void updateUser(fstream&file);
+void crud();
 
 int main(){
-    int numusers = 0;
+    crud();
+   
+
+    return 0;
+}
+
+void crud(){
+    fstream file;
+    char repeat;
     char use;
     bool valid = false;
 
-    fstream file;
 
     while (valid == false){
         cout << "What would you like to do? Create, Read, Update, or Delete? (c/r/u/d)";
@@ -38,9 +46,13 @@ int main(){
         }
 
     }
-    
 
-    return 0;
+    cout << "Would you like to do anything else? ";
+    cin >> repeat;
+
+    if (repeat == 'y')
+        crud();
+    
 }
 
 void createUser(fstream &file){
